@@ -46,6 +46,7 @@ export const projects = [
     category: "Web Development",
     technologies: ["Laravel", "MySQL", "Tailwind CSS", "Arduino IDE", "Ngrok"],
     demoUrl: "https://youtu.be/6kER7mfUOKk?si=nFQ0uUuDZsheFqxU",
+    githubUrl: "https://github.com/rifkythalah/dashboard-iot",
     description: "Sistem manajemen parkir pintar berbasis IoT dengan integrasi deteksi kebakaran, dashboard monitoring real-time, dan sistem peringatan kebakaran otomatis untuk meningkatkan keselamatan.",
     detailedDescription: `Project ini merupakan pengembangan sistem Internet of Things (IoT) yang mengintegrasikan perangkat hardware Arduino/ESP32 dengan website berbasis web dashboard untuk kebutuhan monitoring secara real-time. Sistem dirancang untuk memantau kondisi slot parkir sekaligus mendeteksi potensi kebakaran secara otomatis melalui sensor yang terhubung langsung ke dashboard web.
 
