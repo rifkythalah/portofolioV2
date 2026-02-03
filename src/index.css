@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Kameron:wght@400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+/* ============================================
+   THEME VARIABLES
+   ============================================ */
+@theme {
+  --font-display: "Urbanist", sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-primary: #4bcfec;
+}
+
+@layer base {
+  /* ============================================
+     BASE STYLES
+     ============================================ */
+  html {
+    font-family: var(--font-display);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    --webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  /* ============================================
+     CUSTOM SCROLLBAR STYLES
+     ============================================ */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4bcfec, #011e2d);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6dd5f5, #023149);
+  }
+
+  /* Firefox Scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4bcfec #0a0a0a;
+  }
+
+  /* ============================================
+     UTILITY CLASSES - SCROLLBAR HIDE
+     ============================================ */
+  .scrollbar-hide,
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar,
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ============================================
+     UTILITY CLASSES - LINE CLAMP
+     ============================================ */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ============================================
+     CUSTOM COMPONENT STYLES
+     ============================================ */
+  /* Shiny Text Animation */
+  .shiny-text {
+    display: inline-block;
+  }
+
+  /* Tech Stack Auto-Scrolling */
+  .tech-scroll-container {
+    overflow: hidden;
+    padding: 0.75rem 0;
+  }
+
+  .tech-scroll-content {
+    display: flex;
+    gap: 0.75rem;
+    animation: scroll-left 20s linear infinite;
+    width: fit-content;
+  }
+
+  .tech-scroll-container:hover .tech-scroll-content,
+  .tech-scroll-content.paused {
+    animation-play-state: paused;
+  }
+
+  /* ============================================
+     ANIMATION KEYFRAMES
+     ============================================ */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ============================================
+     ANIMATION UTILITY CLASSES
+     ============================================ */
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-pulse {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animasi-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  /* ============================================
+     SWIPER CUSTOM STYLES
+     ============================================ */
+  /* Global Swiper Pagination */
+  .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #4bcfec;
+  }
+
+  /* Main Swiper */
+  .mySwiper .swiper-slide {
+    width: auto;
+  }
+
+  /* Magazine Swiper */
+  .magazineSwiper .swiper-pagination {
+    bottom: -10px;
+  }
+
+  /* Certificate Swiper */
+  .certificateSwiper .swiper-button-next,
+  .certificateSwiper .swiper-button-prev {
+    color: #4bcfec;
+    background: transparent;
+    width: auto;
+    height: auto;
+    border: none;
+    font-size: 48px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+  }
+
+  .certificateSwiper .swiper-button-next:hover,
+  .certificateSwiper .swiper-button-prev:hover {
+    color: #6dd5f5;
+    transform: scale(1.2);
+  }
+
+  .certificateSwiper .swiper-pagination {
+    bottom: 10px;
+  }
+
+  .certificateSwiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* ============================================
+     RESPONSIVE MEDIA QUERIES
+     ============================================ */
+  /* Mobile - Max 639px */
+  @media (max-width: 639px) {
+    .tech-scroll-content {
+      gap: 0.5rem;
+      animation-duration: 15s;
+    }
+  }
+
+  /* Small Tablet - 640px to 767px */
+  @media (min-width: 640px) and (max-width: 767px) {
+    .tech-scroll-content {
+      gap: 0.625rem;
+      animation-duration: 18s;
+    }
+  }
+
+  /* Tablet - 768px to 1023px */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .tech-scroll-content {
+      gap: 0.75rem;
+      animation-duration: 20s;
+    }
+  }
+
+  /* Desktop - 1024px and up */
+  @media (min-width: 1024px) {
+    .tech-scroll-content {
+      gap: 1rem;
+      animation-duration: 25s;
+    }
+  }
+}
