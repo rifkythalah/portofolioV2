@@ -38,7 +38,7 @@ const MagazineCarousel = ({ magazineImages }) => {
       {magazineImages.map((img, index) => (
         <SwiperSlide key={index}>
           <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 hover:border-[#4BCFEC]/30 transition-colors duration-300">
-            <img src={img} alt={`Magazine ${index + 1}`} className="w-full h-64 sm:h-80 object-cover hover:scale-105 transition-transform duration-300" />
+            <img src={img} alt={`Magazine ${index + 1}`} className="w-full h-96 sm:h-96 md:h-96 object-contain hover:scale-105 transition-transform duration-300" />
           </div>
         </SwiperSlide>
       ))}
